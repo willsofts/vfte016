@@ -111,6 +111,16 @@
           </div>
           <span v-if="v$.gender.$error" class="has-error">{{ v$.gender.$errors[0].$message }}</span>
         </div>
+        <div class="row row-height">
+          <div class="col-md-3 col-height col-label">
+            <label for="userbranch">{{ labels.userbranch_label }}</label>
+          </div>
+          <div class="col-height col-md-5">
+            <select ref="userbranch" v-model="localData.userbranch" class="form-control input-md" id="userbranch">
+              <option v-for="item in dataCategory.tcompbranch" :key="item.id" :value="item.id">{{item.text}}</option>
+            </select>            
+          </div>
+        </div>
         <div class="row row-height" v-if="updateMode">
           <div class="col-md-3 col-height col-label">
             <label for="inactive">{{ labels.inactive_label }}</label>
